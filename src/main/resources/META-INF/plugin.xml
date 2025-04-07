@@ -5,11 +5,16 @@
     <vendor>davidhusicka</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.davidhusicka.intellijinternshiptask.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
         <postStartupActivity implementation="com.github.davidhusicka.intellijinternshiptask.startup.MyProjectActivity" />
+        <intentionAction>
+            <language>JAVA</language>
+            <className>com.github.davidhusicka.intellijinternshiptask.intentions.FindUsageIntention</className>
+        </intentionAction>
     </extensions>
 </idea-plugin>
